@@ -1,0 +1,1536 @@
+@charset "utf-8";
+@import "reset.css";
+
+/* *****************  레이아웃 구성시작 ****************** */
+#wrap,
+#wrap>div {
+  width: 100%;
+  height: auto;
+}
+
+/* 공통요소: 상, 하 padding-> 105px 여백 */
+.container,
+.container-fluid {
+  height: 100%;
+  padding: 105px 0;
+}
+
+/* 공통 padding 105가 제외되는 영역 */
+#navi .container,
+#intro .container-fluid,
+#footer .container {
+  padding: 0;
+}
+
+
+
+
+/* *****************  공통/플러그인 영역 선언 ****************** */
+body {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  /* Bootstrap Spy-Scroll Setting */
+}
+
+/* Title Area Start */
+.title {
+  height: 42px;
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.title h2 {
+  display: inline-block;
+  text-align: center;
+  height: 42px;
+  font: 500 2rem/21px 'Roboto', sans-serif;
+  position: relative;
+}
+
+.title h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #3483de;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -40px;
+}
+
+/* Button Default Settings */
+.button-default {
+  display: inline-block;
+  width: 190px;
+  height: 63px;
+  padding: 21px 43px;
+  font: 700 1.6rem/21px 'Nanum Gothic', sans-serif;
+  position: relative;
+}
+
+.button-default span,
+.button-default::after {
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.button-default span {
+  position: relative;
+  z-index: 1;
+  font-size: 1.7rem;
+}
+
+.button-default::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.button-default:hover::after {
+  width: 100%;
+}
+
+
+/* btn1 settings */
+.btn1 {
+  border: 1px solid #e2e2e2;
+  color: #e2e2e2;
+}
+
+.btn1::after {
+  background-color: #e2e2e2;
+}
+
+.btn1:hover span {
+  color: #2d2d2d !important;
+}
+
+/* btn2 settings */
+.btn2 {
+  border: 2px solid #3483de;
+  color: #3483de;
+
+}
+
+.btn2::after {
+  background-color: #3483de;
+}
+
+.btn2:hover span {
+  color: #fff !important;
+}
+
+
+/* PLUG-IN : Jarallax Settings */
+.jarallax {
+  position: relative;
+  z-index: 0;
+}
+
+.jarallax>.jarallax-img {
+  position: absolute;
+  object-fit: cover;
+  /* support for plugin https://github.com/bfred-it/object-fit-images */
+  font-family: 'object-fit: cover;';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* PLUG-IN : Swiper Settings */
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Mobile Hidden Area Start */
+/* 데스크탑 : container-fluid => 모바일 : container */
+#intro .container,
+#banner2 .container {
+  display: none;
+}
+
+
+/* *****************  개별 영역 선언 ****************** */
+
+/* *****************  Navi Area Start ****************** */
+#navi {
+  height: 63px;
+  border: 0;
+  background-color: transparent;
+}
+
+#navi h1,
+#navi .navbar-nav>li>a,
+#navi #gnb {
+  height: 63px;
+  color: #fff;
+}
+
+#navi .container {
+  position: relative;
+}
+
+/* Logo */
+#navi .navbar-brand {
+  padding: 0;
+  height: 63px;
+  position: absolute;
+  left: 0;
+  color: #fff;
+  font: 700 2.1rem/63px 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* Gnb */
+#navi .navbar-nav>li>a {
+  width: 70px;
+  padding: 0;
+  text-align: center;
+  font: 400 1.4rem/63px 'Roboto', sans-serif;
+  background-color: transparent;
+}
+
+#navi .navbar-nav>li>a:last-child {
+  margin-right: 0;
+}
+
+#navi .navbar-nav>li:nth-child(4) a{ margin-right:10px; }
+
+
+#navi .navbar-nav>li>a:hover {
+  color: #c00;
+}
+
+/* 상단 네비게이션 활성화 클래스 : fixed */
+#navi,
+#navi h1 a,
+#navi #gnb a {
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.fixed {
+  background-color: #fff !important;
+}
+
+.fixed h1 a,
+.fixed #gnb a {
+  color: #2d2d2d !important;
+}
+
+.fixed #gnb a:hover {
+  color: #c00 !important;
+}
+
+/* 부트스트랩 메뉴 초기화 */
+#navi.navbar-default .navbar-nav>.active>a,
+#navi.navbar-default .navbar-nav>.active>a:hover,
+#navi.navbar-default .navbar-nav>.active>a:focus {
+  color: #c00 !important;
+  background-color: transparent !important;
+}
+
+
+
+
+/* *****************  Intro Area Start ****************** */
+#intro,
+#intro #slider,
+#intro #slides,
+#intro #slides>div {
+  height: 100vh;
+}
+
+#intro #slides>div {
+  color: #fff;
+  text-align: center;
+  background: no-repeat top center;
+  background-size: cover;
+}
+
+#intro #slides>div:nth-child(1) {
+  text-align: left;
+  background-image: url(../../images/lg/slider-bg1.png);
+}
+
+#intro #slides>div:nth-child(2) {
+  background-image: url(../../images/lg/slider-bg2.png);
+}
+
+#intro #slides>div:nth-child(3) {
+  background-image: url(../../images/lg/slider-bg3.png);
+}
+
+#intro #slides .caption {
+  width: 1170px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#intro #slides .caption h2 {
+  height: 63px;
+  font-size: 6rem;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+#intro #slides .caption p {
+  height: 21px;
+  font-size: 2.1rem;
+  font-style: italic;
+}
+
+
+/* Slider1 Area Start */
+#intro #slides>div:nth-child(1) .caption {
+  width: 605px;
+  height: 273px;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  -webkit-transform: translate(10%, -50%);
+  -moz-transform: translate(10%, -50%);
+  -o-transform: translate(10%, -50%);
+  transform: translate(10%, -50%);
+}
+
+#intro #slides>div:nth-child(1) .deco-text {
+  width: 100%;
+  height: 21px;
+  font: italic 400 2.1rem/21px 'Roboto', sans-serif;
+  margin-bottom: 21px;
+}
+
+#intro #slides>div:nth-child(1) .caption h2 {
+  width: 100%;
+  height: 125px;
+  font: italic 400 6rem/60px 'Roboto', sans-serif;
+  text-align: left;
+}
+
+/* 슬라이드 화살표 */
+.carousel-control.left i {
+  position: absolute;
+  top: 50%;
+}
+
+.carousel-control.right i {
+  position: absolute;
+  top: 50%;
+}
+
+
+
+/* *****************  About Area Start ****************** */
+#about .container {
+  padding: 105px 15px;
+}
+
+#about .col-md-4 {
+  width: 350px;
+  height: 231px;
+  margin-right: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#about .col-md-4:nth-child(n+3) {
+  margin-right: 0;
+}
+
+#about .col-md-4 .icon-box {
+  width: 100%;
+  height: 105px;
+  margin-bottom: 21px;
+}
+
+#about .col-md-4 .icon-box i {
+  display: block;
+  margin: auto;
+  width: 105px;
+  height: 105px;
+  font-size: 4.7rem;
+  line-height: 105px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #3483de;
+  position: relative;
+}
+
+#about .col-md-4:nth-child(n+2) .icon-box i {
+  font-size: 3rem;
+}
+
+#about .col-md-4 h3 {
+  font: 700 2rem/21px 'Nanum Gothic', sans-serif;
+  margin-bottom: 21px;
+}
+
+#about .col-md-4 p {
+  height: 63px;
+  margin: 0;
+  text-align: center;
+  font: 400 1.4rem/21px 'Nanum Gothic', sans-serif;
+}
+
+/* 아이콘 Hover 애니메이션 */
+#about .col-md-4 .icon-box i::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #3483de;
+  ;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+
+  -webkit-transition: all ease 0.8s;
+  -moz-transition: all ease 0.8s;
+  -o-transition: all ease 0.8s;
+  transition: all ease 0.8s;
+}
+
+#about .col-md-4:hover .icon-box i::after {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/* *******************  Work Area Start **************** */
+#work {
+  background-color: #f2f2f2;
+}
+
+#work .container {
+  padding: 105px 15px;
+}
+
+#work .content>div>div {
+  position: relative;
+}
+
+#work .content>div>div a,
+#work .content>div>div a img,
+#work .content>div>div a .caption {
+  width: 100%;
+  height: 100%;
+}
+
+#work .content>div>div a {
+  display: block;
+}
+
+#work .content>div>div .caption {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(118, 142, 248, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  -webkit-transition: all ease 0.8s;
+  -moz-transition: all ease 0.8s;
+  -o-transition: all ease 0.8s;
+  transition: all ease 0.8s;
+
+  opacity: 0;
+}
+
+#work .content>div>div:hover .caption {
+  opacity: 1;
+}
+
+#work .content>div>div .caption h3 {
+  font: 700 2.5rem/25px 'Roboto', sans-serif;
+  width: 100%;
+  height: 25px;
+  text-align: center;
+  color: #fff;
+}
+
+/* left-box */
+#work .left-box>div {
+  width: 50%;
+  height: 294px;
+  float: left;
+}
+
+#work .left-box>div:last-child {
+  width: 100%;
+}
+
+/* right-box */
+#work .right-box>div {
+  width: 50%;
+  height: 294px;
+  float: left;
+}
+
+#work .right-box>div:first-child {
+  height: 588px;
+}
+
+
+/* *******************  Banner1 Area Start **************** */
+#banner1 {
+  background-image: url(../../images/lg/banner1-bg.png);
+}
+
+#banner1 .container {
+  padding: 105px 15px;
+}
+
+#banner1 h2 {
+  width: 405px;
+  height: 63px;
+  color: #fff;
+  font: 400 3.2rem/35px 'Roboto', sans-serif;
+  float: left;
+  margin-right: 260px;
+}
+
+#banner1 .btn1 {
+  padding: 21px 25px;
+}
+
+/* *******************  Features Area Start **************** */
+#features .container {
+  padding: 105px 15px;
+}
+
+#features .col-md-4 {
+  width: 350px;
+  height: 126px;
+  margin: 0 42px 30px 0;
+
+}
+
+#features .col-md-4:nth-child(3n) {
+  margin-right: 0;
+}
+
+#features .col-md-4:nth-child(n+4) {
+  margin-bottom: 0;
+}
+
+#features .col-md-4 .icon {
+  float: left;
+  width: 65px;
+  height: 100%;
+  font-size: 3rem;
+  line-height: 30px;
+  color: #3483de;
+}
+
+#features .col-md-4:nth-child(2) .icon {
+  font-size: 4rem;
+}
+
+#features .col-md-4 h3 {
+  font: 700 2rem/21px 'Nanum Gothic', sans-serif;
+  margin-bottom: 21px;
+}
+
+#features .col-md-4 p {
+  font: 400 1.4rem/21px 'Nanum Gothic', sans-serif;
+  margin: 0;
+}
+
+
+/* *******************  Analysis Area Start **************** */
+#analysis {
+  background-image: url(../../images/lg/analysis-bg.png);
+  color: #fff;
+}
+
+#analysis .container {
+  padding: 105px 15px;
+}
+
+/* left-box */
+#analysis .left-box {
+  width: 540px;
+  height: 168px;
+  margin-right: 30px;
+}
+
+#analysis .left-box h2 {
+  font: 400 2rem/21px 'Roboto', sans-serif;
+  margin-bottom: 21px;
+
+}
+
+#analysis .left-box p {
+  font: 400 1.4rem/21px 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* right-box */
+#analysis .right-box .circle-wrap {
+  width: 350px;
+  height: 168px;
+}
+
+#analysis .right-box .circle-wrap>div {
+  width: 50%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  position: relative;
+  display: block;
+}
+
+#analysis .right-box .circle-wrap>div strong {
+  font: 400 2rem 'Roboto', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#analysis .right-box .circle-wrap .circle h3 {
+  font: 700 1.8rem/21px 'Nanum Gothic', sans-serif;
+  height: 21px;
+}
+
+
+/* *******************  Plan Area Start **************** */
+#plan .row>div {
+  padding: 0 15px;
+}
+
+/* left-box */
+#plan .left-box ul {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+#plan .left-box ul li h3 {
+  font: 700 1.8rem/42px 'Nanum Gothic', sans-serif;
+  position: relative;
+  height: 42px
+}
+
+#plan .left-box ul li h3 span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font: 700 2rem/42px 'Nanum Gothic', sans-serif;
+}
+
+#plan .progress {
+  height: 17px;
+}
+
+#plan .progress .progress-bar {
+  background-color: #5cb85c;
+}
+
+
+/* right-box */
+#plan .right-box h2 {
+  height: 42px;
+  margin-bottom: 21px;
+  font: 700 2rem/42px 'Roboto', sans-serif;
+}
+
+#plan .right-box p:nth-child(2) {
+  width: 100%;
+  height: 146px;
+  font: 400 1.4rem/1.5 'Nanum Gothic', sans-serif;
+  margin-bottom: 42px;
+}
+
+#plan .right-box p:nth-child(3) {
+  margin: 0;
+  height: 63px;
+}
+
+#plan .btn2 {
+  padding: 21px 42px;
+}
+
+/* *******************  Banner2 Area Start **************** */
+#banner2 {
+  position: relative;
+  height: auto;
+  color: #fff;
+}
+
+#banner2 .container-fluid::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#banner2 .text-box {
+  width: 600px;
+  height: 189px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+#banner2 .text-box h2 {
+  font: 400 3.7rem/42px 'Roboto', sans-serif;
+  height: 42px;
+  margin-bottom: 21px;
+}
+
+#banner2 .text-box p {
+  font: 400 1.6rem/21px 'Roboto', sans-serif;
+  margin-bottom: 42px;
+}
+
+#banner2 .btn1 {
+  padding: 21px 39px;
+}
+
+/* *******************  Banner3 Area Start **************** */
+#banner3 {
+  background-color: #f2f2f2;
+}
+
+#banner3 .container {
+  padding: 105px 15px;
+}
+
+#banner3 .swiper-wrap {
+  width: 100%;
+  height: 147px;
+}
+
+#banner3 .swiper-wrap .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+#banner3 .swiper-wrap .swiper-container .swiper-slide {
+  width: 100%;
+  height: 105px;
+}
+
+/* *******************  Footer Area Start **************** */
+
+#footer {
+  height: 84px;
+  background-color: #333;
+  color: #fff;
+  padding: 21px 0;
+}
+
+#footer .col-md-6 {
+  height: 42px;
+}
+
+#footer .col-md-6 a {
+  font-size: 3.2rem;
+  color: #fff;
+  margin: 0 5px;
+}
+
+#footer .col-md-6 a:hover {
+  color: #fc0;
+}
+
+#footer .col-md-6 p {
+  height: 42px;
+  line-height: 42px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+/* ctrl+alt+l  : Beautify */
+
+/* *******************  Media Query Start **************** */
+@media screen and (max-width: 1199px) {
+  /*960*/
+
+  /* ******************* 레이아웃 구성시작 **************** */
+  .container {
+    width: 930px;
+  }
+
+  #navi .navbar-nav>li:nth-child(4) a {
+    margin-right: 10px;
+  }
+
+  /* ******************* 공통영역 구성시작 **************** */
+  /* ******************* 개별영역 구성시작 **************** */
+  /* ******************* About Area Start **************** */
+  #about .col-md-4 {
+    width: 31%
+  }
+
+
+  /* ******************* Work Area Start **************** */
+  /* left-box */
+  #work .left-box {
+    width: 100%;
+  }
+
+  #work .left-box>div {
+    width: 50%;
+    height: 462px;
+  }
+
+  #work .left-box>div:last-child {
+    height: 294px;
+  }
+
+  /* right-box */
+  #work .right-box {
+    width: 100%;
+  }
+
+  #work .right-box>div {
+    width: 50%;
+    height: 462px;
+  }
+
+  #work .right-box>div:first-child {
+    height: 924px;
+  }
+
+
+  /* ******************* Features Area Start **************** */
+  #features .col-md-4 {
+    width: 265px;
+    height: 147px;
+  }
+
+  #features .col-md-4 .icon {
+    width: 20%;
+  }
+
+
+
+  /* ******************* Analysis Area Start **************** */
+  #analysis {
+    background-image: url(../../images/md/analysis-bg.png);
+  }
+
+  /* left-box */
+  #analysis .left-box {
+    width: 50%;
+    height: 100%;
+  }
+
+  /* right-box */
+  #analysis .right-box {
+    width: 40%;
+  }
+
+
+  /* ******************* Plan Area Start **************** */
+  #plan .left-box,
+  #plan .right-box {
+    width: 100%;
+  }
+
+  #plan .right-box {
+    margin-bottom: 105px;
+  }
+
+  #plan .right-box p:nth-child(2) {
+    width: 770px;
+    height: 105px;
+    margin-bottom: 84px;
+  }
+
+  #plan .left-box ul {
+    width: 770px;
+  }
+
+  /* ******************* Banner3 Area Start **************** */
+  #banner3 .swiper-wrap .swiper-container .swiper-slide {
+    height: 84px;
+  }
+
+}
+
+/*1199  End */
+
+
+
+/* Tablet & Desktop Device */
+@media screen and (min-width:768px) and (max-width:959px) {
+
+
+  /* *******************  레이아웃 구성 영역 **************** */
+  #navi .container,
+  #banner1 .container,
+  #intro .container {
+    width: 95%;
+  }
+
+
+  .container {
+    width: 510px;
+  }
+
+  /* DeskTop Hidden Area Start */
+  #intro .container-fluid,
+  #banner2 .container-fluid {
+    display: none;
+  }
+
+  #intro .container,
+  #banner2 .container {
+    display: block;
+  }
+
+  /* *******************  공통영역 구성 영역 **************** */
+  /* 700대 버튼 사이즈 수정 */
+  .button-default {
+    width: 150px;
+    height: 42px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .button-default span {
+    font: 700 1.4rem/42px 'Nanum Gothic', sans-serif;
+  }
+
+
+
+  /* *******************  개별영역 구성 영역 **************** */
+  /* ******************* NAVI AREA START **************** */
+  #navi .navbar-nav>li:nth-child(4)>a {
+    margin-right: 10px;
+  }
+
+
+
+
+
+
+
+  /* *******************  Intro Area Start **************** */
+  div#intro {
+    background-image: url(../../images/sm/intro-bg.png);
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+  }
+
+  div#intro .caption {
+    width: 424px;
+    height: 324px;
+    top: 30%;
+    position: absolute;
+  }
+
+
+  div#intro .deco-text {
+    font-size: 2.1rem;
+    font-style: italic;
+    margin-bottom: 21px;
+  }
+
+  div#intro .caption h2 {
+    width: 100%;
+    height: 147px;
+    font-size: 5.5rem;
+    line-height: 50px;
+    font-style: italic;
+    margin-bottom: 63px;
+  }
+
+
+
+  /* *******************  About Area Start **************** */
+
+  #about .col-md-4 {
+    width: 100%;
+    margin: 0 0 63px 0;
+  }
+
+
+
+
+  /* *******************  Work Area Start **************** */
+  #work .container {
+    padding: 105px 0;
+    width: 100%;
+  }
+
+  #work .left-box>div {
+    height: 378px;
+  }
+
+  #work .right-box>div {
+    height: 378px;
+  }
+
+  #work .right-box>div:first-child {
+    height: 756px;
+  }
+
+  /* *******************  Banner1 Area Start **************** */
+  #banner1 .btn1 {
+    padding: 0px 10px;
+  }
+
+  #banner1 {
+    text-align: center;
+  }
+
+  #banner1 h2 {
+    width: 100%;
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+
+
+  /* *******************  Features Area Start **************** */
+  #features .container {
+    width: 510px;
+  }
+
+  #features .col-md-4 {
+    width: 100%;
+  }
+
+
+  /* *******************  Analysis Area Start **************** */
+  #analysis {
+    height: 672px;
+  }
+
+  #analysis .left-box,
+  #analysis .right-box {
+    width: 100%;
+  }
+
+  #analysis .left-box {
+    margin-bottom: 63px;
+  }
+
+  #analysis .right-box .circle-wrap {
+    width: 100%;
+  }
+
+  #analysis .right-box .circle h3 {
+    margin-top: 21px;
+  }
+
+
+  /* *******************  Plan Area Start **************** */
+  #plan .right-box p:nth-child(2) {
+    width: 100%;
+    height: 100%;
+  }
+
+  #plan .left-box ul {
+    width: 100%;
+  }
+
+  #plan .btn2 {
+    padding: 0px 25px;
+  }
+
+  #plan .left-box ul li h3 {
+    font-size: 1.6rem;
+  }
+
+  #plan .left-box ul li h3 span {
+    font-size: 1.4rem;
+  }
+
+  #plan .right-box p:nth-child(3) {
+    height: 42px;
+  }
+
+  /* *******************  Banner2 Area Start **************** */
+  #banner2 {
+    background-image: url(../../images/md/banner3-bg.png);
+  }
+
+  #banner2 .text-box {
+    width: 510px;
+  }
+
+  #banner2 .text-box p {
+    margin: 0 auto 42px;
+  }
+
+  #banner2 .btn1 {
+    padding: 10px 23px;
+  }
+
+
+  /* *******************  Banner3 Area Start **************** */
+  #banner2 .btn1 {
+    padding: 0px 23px;
+  }
+
+  /* ********** Footer Area Start *********** */
+  #footer .col-md-6,
+  #footer .col-md-6 p {
+    width: 100%;
+    text-align: center;
+  }
+
+
+
+}
+
+/* 중간대역 */
+
+
+
+/* Tablet Device */
+@media screen and (max-width:767px) {
+  /* 750  */
+
+  /* *******************  레이아웃 구성 영역 **************** */
+  .container {
+    width: 540px;
+  }
+
+  /* DeskTop Hidden Area Start */
+  #intro .container-fluid,
+  #banner2 .container-fluid {
+    display: none;
+  }
+
+  #intro .container,
+  #banner2 .container {
+    display: block;
+  }
+
+  /* *******************  공통영역 구성 영역 **************** */
+  /* 700대 버튼 사이즈 수정 */
+  .button-default {
+    width: 150px;
+    height: 42px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .button-default span {
+    font: 700 1.6rem/42px 'Nanum Gothic', sans-serif;
+  }
+
+
+
+  /* *******************  개별영역 구성 영역 **************** */
+  /* ******************* NAVI AREA START **************** */
+  #navi,
+  #gnb {
+    background-color: rgba(255, 255, 255)!important;
+    border-bottom:1px solid #ccc!important;
+  }
+
+  #navi #gnb {
+    height: auto;
+    border-bottom: 1px solid #ccc;
+  }
+
+  #navi h1 a,
+  #navi #gnb a {
+    color: #2d2d2d !important;
+  }
+
+  #navi #gnb a:hover {
+    color: #c00 !important;
+  }
+
+  #navi .navbar-toggle {
+    margin: 15px 0 0 0;
+  }
+
+  /* 부트스트랩 메뉴 초기화 */
+  .navbar-fixed-top .navbar-collapse,
+  .navbar-fixed-bottom .navbar-collapse {
+    max-height: 550px;
+  }
+
+  .navbar-nav {
+    background-color: #fff;
+  }
+
+  #navi .navbar-nav>li:nth-child(4) a,
+  #navi .navbar-nav>li:nth-child(5) a,
+  #navi .navbar-nav>li:nth-child(7) a {
+    margin-left: 10px;
+  }
+
+  /* *******************  Intro Area Start **************** */
+  div#intro {
+    background-image: url(../../images/sm/intro-bg.png);
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+  }
+
+  div#intro .caption {
+    width: 424px;
+    height: 324px;
+    top: 30%;
+    position: absolute;
+  }
+
+  div#intro .deco-text {
+    font-size: 2.1rem;
+    font-style: italic;
+    margin-bottom: 21px;
+  }
+
+  div#intro .caption h2 {
+    width: 100%;
+    height: 147px;
+    font-size: 5.5rem;
+    line-height: 50px;
+    font-style: italic;
+    margin-bottom: 63px;
+  }
+
+
+
+  /* *******************  About Area Start **************** */
+  #about .col-md-4 {
+    width: 100%;
+    margin-bottom: 63px;
+  }
+
+
+
+
+  /* *******************  Work Area Start **************** */
+  #work .container {
+    padding: 105px 0;
+    width: 100%;
+  }
+
+  #work .left-box>div {
+    height: 378px;
+  }
+
+  #work .right-box>div {
+    height: 378px;
+  }
+
+  #work .right-box>div:first-child {
+    height: 756px;
+  }
+
+  /* *******************  Banner1 Area Start **************** */
+  #banner1 .btn1 {
+    padding: 0px 10px;
+  }
+
+  #banner1 {
+    text-align: center;
+  }
+
+  #banner1 h2 {
+    width: 100%;
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+
+
+  /* *******************  Features Area Start **************** */
+  #features .col-md-4 {
+    width: 100%;
+  }
+
+
+  /* *******************  Analysis Area Start **************** */
+  #analysis {
+    height: 672px;
+  }
+
+  #analysis .left-box,
+  #analysis .right-box {
+    width: 100%;
+  }
+
+  #analysis .left-box {
+    margin-bottom: 63px;
+  }
+
+  #analysis .right-box .circle-wrap {
+    width: 100%;
+  }
+
+  #analysis .right-box .circle h3 {
+    margin-top: 21px;
+  }
+
+
+  /* *******************  Plan Area Start **************** */
+  #plan .right-box p:nth-child(2) {
+    width: 100%;
+    height: 100%;
+  }
+
+  #plan .right-box p:nth-child(3) {
+    height: 100%;
+  }
+
+  #plan .left-box ul {
+    width: 100%;
+  }
+
+  #plan .btn2 {
+    padding: 0px 25px;
+  }
+
+  #plan .left-box ul li h3 {
+    font-size: 1.6rem;
+  }
+
+  #plan .left-box ul li h3 span {
+    font-size: 1.4rem;
+  }
+
+  #plan .left-box ul li:last-child .progress {
+    margin-bottom: 0;
+  }
+
+  /* *******************  Banner2 Area Start **************** */
+  #banner2 {
+    background-image: url(../../images/sm/banner3-bg.png);
+  }
+
+  #banner2 .text-box {
+    width: 510px;
+  }
+
+  #banner2 .text-box p {
+    margin: 0 auto 42px;
+  }
+
+  #banner2 .btn1 {
+    padding: 0px 23px;
+  }
+
+
+  /* *******************  Banner3 Area Start **************** */
+
+
+  /* ********** Footer Area Start *********** */
+  #footer .col-md-6,
+  #footer .col-md-6 p {
+    width: 100%;
+    text-align: center;
+  }
+
+
+}
+
+/* 767px */
+
+@media screen and (max-width:576px) {
+
+  /* 750  */
+  .container {
+    width: 450px;
+  }
+
+  #navi .navbar-toggle {
+    margin: 15px 15px 0 0;
+  }
+
+  /* ********** Intro Area Start *********** */
+  div#intro {
+    height: 651px;
+    background-image: url(../../images/xs/intro-bg.png);
+    position: relative;
+  }
+
+  div#intro .caption {
+    position: absolute;
+    top: 28%;
+    height: auto;
+  }
+
+  div#intro .caption p {
+    margin-bottom: 0;
+
+  }
+
+  .button-default span {
+    font-size: 1.4rem;
+  }
+
+  div#intro .caption h2 {
+    font-size: 4rem;
+    width: 70%;
+    height: auto;
+  }
+
+  /* ********** About Area Start *********** */
+  #about .content .col-md-4 {
+    width: 100%;
+  }
+
+  #about .content .col-md-4:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ********** Work Area Start *********** */
+  #work .left-box>div,
+  #work .right-box>div {
+    width: 100%;
+    height: auto;
+    float: none;
+  }
+
+  #work .right-box>div:first-child,
+  #work .left-box>div:last-child {
+    height: auto;
+  }
+
+  /* ********** Banner1 Area Start *********** */
+  #banner1 h2 {
+    height: auto;
+    padding: 0 50px;
+    margin-bottom: 30px;
+  }
+
+
+  /* ********** Features Area Start *********** */
+  #features {
+    text-align: center;
+  }
+
+  #features .col-md-4 {
+    height: auto;
+  }
+
+  #features .col-md-4:nth-child(n+4) {
+    margin-bottom: 30px;
+  }
+
+  #features .col-md-4:last-child {
+    margin-bottom: 0;
+  }
+
+  #features .content .col-md-4 .icon {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    margin-bottom: 21px;
+  }
+
+  /* ********** Analysis Area Start *********** */
+  div#analysis {
+    height: 840px;
+    background-image: url(../../images/xs/analysis-bg.png);
+  }
+
+  #analysis .right-box .circle-wrap>div {
+    float: none;
+    margin: 0 auto 63px;
+  }
+
+  #analysis .right-box .circle-wrap>div:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ********** Plan Area Start *********** */
+
+
+  /* ********** Banner2 Area Start *********** */
+  div#banner2 {
+    height: 441px;
+    background-image: url(../../images/xs/banner3-bg.png) no-repeat;
+  }
+
+  div#banner2 .container {
+    padding: 130px 0 105px 0;
+  }
+
+  #banner2 .text-box h2 {
+    font: 400 2.5rem/25px 'Roboto', sans-serif;
+  }
+
+  #banner2 .text-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  #banner2 .text-box {
+    width: 80%;
+  }
+
+
+
+  /* ********** banner3 Area Start *********** */
+  #banner3 .container {
+    padding: 105px 120px;
+  }
+
+  #banner3 .swiper-wrap {
+    width: 210px;
+  }
+}

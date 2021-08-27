@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+/* Google Web Font 
+  1. font-family: 'Open Sans', sans-serif;
+  2. font-family: 'Roboto', sans-serif;
+  3. font-family: 'Lato', sans-serif;
+  4. font-family: 'Nanum Gothic', sans-serif;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Nanum+Gothic:wght@400;700;800&family=Open+Sans:wght@300;400;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+
+/* Reset */
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+html{
+  font-size: 10px;
+}
+
+body{
+  font-size: 1.4rem;
+  font-family: "맑은 고딕", sans-serif;
+}
+
+ul, ol{ 
+  list-style: none;
+}
+
+a, a:hover, a:focus{
+  color: #000;
+  text-decoration: none;
+}
+
+fieldset{
+  border: 0;
+}
+
+legend{
+  display: block;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  text-indent: -9999px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+label, input{
+  vertical-align: middle;
+}
+
+input, textarea{
+  outline: none;
+}
+
+table, tr, th, td{
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+caption{
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+p{
+  line-height: 1.5;
+}
+
+
+
+/* Help Class Settings */
+
+/* IR(Image Replace) */
+.ir{
+  display: block;
+  background: no-repeat 0 0;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+/* 플롯해제 클래스 */
+.clearfix::after{
+  content: ''; display: block; clear: both;
+}
+
+/* 화면 감춤 클래스 */
+.screen-hidden{
+  display: block;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  text-indent: -9999px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Bootstrap Reset */
+.container, .container-fluid{ padding: 0; }
+.row, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+  margin: 0; padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6{ margin: 0; padding: 0; }
